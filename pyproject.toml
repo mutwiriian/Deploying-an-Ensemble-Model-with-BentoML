@@ -1,0 +1,26 @@
+[tool.poetry]
+name = "garment-productivity"
+version = "0.1.0"
+description = "Analysis of productivity of garment workers"
+authors = ["Your Name <you@example.com>"]
+readme = "README.md"
+packages = [{include = "garment_productivity"}]
+
+[tool.poetry.dependencies]
+python = "^3.10"
+pandas = "^2.0.3"
+matplotlib = "^3.7.2"
+seaborn = "^0.12.2"
+scikit-learn = "^1.3.0"
+numpy = "^1.25.2"
+ipykernel = "^6.25.1"
+pip = "^23.2.1"
+jupyter = "^1.0.0"
+psutil = "^5.9.5"
+statsmodels = "^0.14.0"
+xgboost = "^1.7.6"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
