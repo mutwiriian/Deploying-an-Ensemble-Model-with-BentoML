@@ -43,3 +43,5 @@ For `svc_array` ensure the payload is within double square brackets.
 
 To run the notebook, follow the installation steps above but while in the root directory
 
+# Contributing
+You can make pull requests or open an issue for major changes.
