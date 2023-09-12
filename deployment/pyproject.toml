@@ -1,0 +1,22 @@
+[tool.poetry]
+name = "garment productivity ml model"
+version = "1.0.0"
+description = "Deployment of Garment Productivity Classifier with BentoML"
+authors = ["mutwiriian <mutwiri_ian@yahoo.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.10"
+bentoml = {extras = ["io-json"], version = "^1.1.6"}
+numpy = "^1.25.2"
+joblib = "^1.3.2"
+scikit-learn = "^1.3.0"
+pandas = "^2.1.0"
+
+
+[tool.poetry.group.dev.dependencies]
+ipykernel = "^6.25.2"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
