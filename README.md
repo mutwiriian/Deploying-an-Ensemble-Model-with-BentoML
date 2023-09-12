@@ -10,19 +10,36 @@ as this comes higher computational costs
 To see the model in action run:
 
 ```bash
-cd deployment
+git clone https://github.com/mutwiriian/Garment-Workers-Productivity-Analysis-and-Ensemble-Model-building-Scikit-Learn.git
 ```
 
 ```bash
-git clone https://github.com/mutwiriian/Garment-Workers-Productivity-Analysis-and-Ensemble-Model-building-Scikit-Learn.git
+cd deployment
 ```
+Activate environment from `poetry.lock` with
+
+```bash
+poetry lock
+```
+and activate the environment with
+```bash
+poetry shell
+```
+Install the packages packages by running
+
+```bash
+poetry install
+```
+
 Run the service with
 
 ```bash
 bentoml serve service:svc_array #:svc_json
 ```
-Open your browser at the endpoint specified
+Open your browser at the endpoint specified. Mine is at http://localhost/3000
 
 Copy the contents of either `sample_array.txt' or 'sample_json.txt' int the `Tryout` button.
 For `svc_array` ensure the payload is within double square brackets.
+
+To run the notebook, follow the installation steps above but while in the root directory
 
