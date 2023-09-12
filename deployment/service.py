@@ -2,18 +2,21 @@ import json
 import numpy as np
 import pandas as pd
 
-from bentoml.io import NumpyNdarray, JSON
-from pydantic import BaseModel
-import bentoml
+from bentoml.io import NumpyNdarray, JSON #data exchange formats
+from pydantic import BaseModel #for data vizualization
+import bentoml #deployment
 
+#get model from store and send to Runner
 stacked_classifier_runner = bentoml.sklearn.get('stacked_classifier:latest').to_runner()
 
+# Put the model in a bentoml.Service object which we then turn to an API by decorating
+# with @svc.array.api. This defines an endpoint which invokes the function classifier()
+# whenever it receives requests while sending data to the endpoint as an array.
 svc_array = bentoml.Service(
     name = 'stacked_classifier_arr',
     runners= [stacked_classifier_runner]
 )
 
-# Sending data as array
 @svc_array.api(input= NumpyNdarray(dtype= np.float32),
          output= NumpyNdarray(dtype= np.int64, shape= (-1,)))
 def classifier(sample: np.array) -> np.array:
