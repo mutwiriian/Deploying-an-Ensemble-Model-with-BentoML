@@ -14,12 +14,8 @@ git clone https://github.com/mutwiriian/Garment-Workers-Productivity-Analysis-an
 ```bash
 cd deployment
 ```
-Activate environment from `poetry.lock` with
-
-```bash
-poetry lock
-```
 and activate the environment with
+
 ```bash
 poetry shell
 ```
@@ -28,7 +24,6 @@ Install the packages packages by running
 ```bash
 poetry install
 ```
-
 Run the service with
 
 ```bash
@@ -39,7 +34,8 @@ Open your browser at the endpoint specified. Mine is at http://localhost/3000
 Copy the contents of `sample.txt` in the box obtained by clicking the button `Try it out`
 
 # Creating the Bento object
-A `Bento` is a collection of the artifacts that are required to successfully run the model
+A `Bento` is a collection of the artifacts that are required to successfully run the model.
+It makes it easier for teams to work together by providing a consistent format.
 This is created by running
 
 ```bash
