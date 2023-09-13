@@ -1,0 +1,18 @@
+service: "service:svc"
+
+labels:
+  owner: mutwiriian
+  stage: dev
+
+include:
+- "*.py"
+- "*.txt"
+
+python:
+  packages:
+    - pandas
+    - scikit-learn
+    - pydantic
+
+models:
+- stacked_classifier:latest

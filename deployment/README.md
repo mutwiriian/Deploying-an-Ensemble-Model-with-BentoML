@@ -31,12 +31,31 @@ poetry install
 Run the service with
 
 ```bash
-bentoml serve service:svc_array #:svc_json
+bentoml serve service:svc
 ```
 Open your browser at the endpoint specified. Mine is at http://localhost/3000
 
-Copy the contents of either `sample_array.txt` or `sample_json.txt` in the box obtained by clicking the button `Try it out`
-For `svc_array` ensure the payload is within double square brackets.
+Copy the contents of either `sample.txt` in the box obtained by clicking the button `Try it out`
+
+# Creating the Bento object
+A `Bento` is a collection of the artifacts that are required to successfully tun the model
+This is created by running
+
+```bash
+bentoml build
+```
+This file is the standard format for uniform distribution in BentoML
+
+# Docker
+To run the model in its own deployable model, I use Docker. Bentoml generates a Docker image when we run
+```bash
+bentoml containerize stacked_classifier:latest
+```
+We can the run the image by
+```bash
+docker run --rm -p 3000:3000 stacked_classifier:kt3lcfcsakylpmo6
+```
+You can then navigate to `http://localhost:3000` where we can interact with the deployed model.
 
 # Contributing
 You can make pull requests or open an issue for major changes.
