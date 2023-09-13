@@ -17,6 +17,7 @@ pydantic = "1.8.2"
 
 [tool.poetry.group.dev.dependencies]
 ipykernel = "^6.25.2"
+docker-slim
 
 [build-system]
 requires = ["poetry-core"]

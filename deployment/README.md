@@ -57,5 +57,13 @@ docker run --rm -p 3000:3000 stacked_classifier:kt3lcfcsakylpmo6
 ```
 You can then navigate to `http://localhost:3000` where we can interact with the deployed model.
 
+# DockerSlim
+The Docker image created in the previous steps is quite large. Approx. 800MB
+This will result in longer build time when we need it to download faster, scale faste and use less memory. I use [DockerSlim](https://github.com/slimtoolkit/slim) to optimize the Docker image. To install Slim, run 
+```bash
+curl -sL https://raw.githubusercontent.com/slimtoolkit/slim/master/scripts/install-slim.sh | sudo -E bash -
+```
+
+
 # Contributing
 You can make pull requests or open an issue for major changes.
