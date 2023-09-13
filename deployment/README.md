@@ -1,3 +1,4 @@
+# Introduction
 Here I deploy the trained model as a microservice which users and other programs can interact with.
 
 There are many methods of deploying machine learning as have been discussed 
@@ -35,10 +36,10 @@ bentoml serve service:svc
 ```
 Open your browser at the endpoint specified. Mine is at http://localhost/3000
 
-Copy the contents of either `sample.txt` in the box obtained by clicking the button `Try it out`
+Copy the contents of `sample.txt` in the box obtained by clicking the button `Try it out`
 
 # Creating the Bento object
-A `Bento` is a collection of the artifacts that are required to successfully tun the model
+A `Bento` is a collection of the artifacts that are required to successfully run the model
 This is created by running
 
 ```bash
@@ -47,23 +48,15 @@ bentoml build
 This file is the standard format for uniform distribution in BentoML
 
 # Docker
-To run the model in its own deployable model, I use Docker. Bentoml generates a Docker image when we run
+To run the model in its own environment, I use Docker. Bentoml generates a Docker image when we run
 ```bash
 bentoml containerize stacked_classifier:latest
 ```
-We can the run the image by
+We can then run the image by
 ```bash
 docker run --rm -p 3000:3000 stacked_classifier:kt3lcfcsakylpmo6
 ```
-You can then navigate to `http://localhost:3000` where we can interact with the deployed model.
-
-# DockerSlim
-The Docker image created in the previous steps is quite large. Approx. 800MB
-This will result in longer build time when we need it to download faster, scale faste and use less memory. I use [DockerSlim](https://github.com/slimtoolkit/slim) to optimize the Docker image. To install Slim, run 
-```bash
-curl -sL https://raw.githubusercontent.com/slimtoolkit/slim/master/scripts/install-slim.sh | sudo -E bash -
-```
-
+Navigate to `http://localhost:3000` where you can interact with the deployed model.
 
 # Contributing
 You can make pull requests or open an issue for major changes.
