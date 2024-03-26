@@ -3,7 +3,7 @@ import pandas as pd
 
 from bentoml.io import NumpyNdarray, JSON #data exchange formats
 import bentoml #deployment
-from pydantic import BaseModel #for data vizualization
+from pydantic import BaseModel #for data validation
 
 #get model from store and send to Runner
 stacked_classifier_runner = bentoml.sklearn.get('stacked_classifier:latest').to_runner()
